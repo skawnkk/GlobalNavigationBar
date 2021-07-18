@@ -6,18 +6,17 @@ import { mokdata } from '../../util/mokdata';
 function MainNavigation({ MainNavRef, isNavShown, setNavShown }) {
   const handleNavLeave = () => setNavShown(false);
   const menuContent = mokdata.tags.map((tag, idx) => {
-    if (idx >= 5) return;
+    if (idx >= 5) return null;
     return <NaviMenu key={tag.id} title={tag.title} contents={tag.tags} />;
   });
-  const menuGroup = mokdata.tags.map((tag, idx) => {
-    if (idx >= 5)
-      return (
-        <NaviMenuTitle>
-          <div key={tag.id}>{tag.title}&nbsp;&nbsp;</div>
-          <div className='icon'>&gt;</div>
-        </NaviMenuTitle>
-      );
-  });
+  const menuGroup = mokdata.tags.map((tag, idx) =>
+    idx >= 5 ? (
+      <NaviMenuTitle>
+        <div key={tag.id}>{tag.title}&nbsp;&nbsp;</div>
+        <div className='icon'>&gt;</div>
+      </NaviMenuTitle>
+    ) : null
+  );
 
   return (
     <PortalNavi>

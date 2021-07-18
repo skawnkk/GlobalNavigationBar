@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 function Menu({ setNavShown, MainNavRef, children }) {
-  const handleMouseMove = (children, e) => {
+  const handleMouseMove = (children) => {
     if (children !== '탐색') return;
     setNavShown(true);
   };
@@ -12,7 +12,7 @@ function Menu({ setNavShown, MainNavRef, children }) {
   };
 
   return (
-    <MenuBlock onMouseEnter={(e) => handleMouseMove(children, e)} onMouseLeave={(e) => handleMouseLeave(e)}>
+    <MenuBlock onMouseEnter={() => handleMouseMove(children)} onMouseLeave={handleMouseLeave}>
       {children}
     </MenuBlock>
   );

@@ -1,10 +1,7 @@
 import styled from 'styled-components';
 import NaviMenuTitle from './NaviMenuTitle';
 function NaviMenu({ title, contents }) {
-  const subMenus = contents.map((content, idx) => {
-    if (idx <= 6) return <div>{content.title}</div>;
-    else return;
-  });
+  const subMenus = contents.map((content, idx) => (idx <= 6 ? <div key={idx}>{content.title}</div> : null));
 
   return (
     <NaviMenuBlock>
