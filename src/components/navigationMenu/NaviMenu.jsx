@@ -7,13 +7,13 @@ function NaviMenu({ title, contents }) {
     <NaviMenuBlock>
       <NaviMenuTitle>
         <div>{title}</div>
-        <div class='icon'>&gt;</div>
+        <div className='icon'>&gt;</div>
       </NaviMenuTitle>
       <div className='navi-subMenu'>
         {subMenus}
         <div className='navi-subMenu-more'>
           <div>더보기</div>
-          <div class='icon'>&gt;</div>
+          <div className='icon'>&gt;</div>
         </div>
       </div>
     </NaviMenuBlock>

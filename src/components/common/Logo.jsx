@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 function Logo() {
   return (
-    <Link path='/'>
+    <Link to='/'>
       <LogoBlock>
         <img src={process.env.PUBLIC_URL + '/logo.png'} alt='logo' height='50' />
       </LogoBlock>
