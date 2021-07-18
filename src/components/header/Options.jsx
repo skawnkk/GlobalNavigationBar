@@ -29,7 +29,6 @@ const OptionsBlock = styled.div`
   .options-seperator {
     color: ${({ theme }) => theme.color.transparent};
     border-left: 1px solid ${({ theme }) => theme.color.grey};
-    height: 20px;
   }
   .options-business {
     width: 120px;

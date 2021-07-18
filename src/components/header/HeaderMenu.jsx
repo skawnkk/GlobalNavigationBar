@@ -6,7 +6,7 @@ function Menu({ setNavShown, MainNavRef, children }) {
     setNavShown(true);
   };
   const handleMouseLeave = ({ relatedTarget }) => {
-    if (relatedTarget === MainNavRef.current) return;
+    if (!relatedTarget || relatedTarget === MainNavRef.current) return;
     if (relatedTarget.closest('.header')) setNavShown(false);
   };
 

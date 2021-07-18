@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import styled from 'styled-components';
+import { MediaBasicScreen, MediaSmallScreen } from '../../util/mediaquery';
 import HeaderMenu from './HeaderMenu';
 import MainNavigation from '../navigationMenu/MainNavigation';
 function Navigation() {
@@ -11,10 +12,26 @@ function Navigation() {
       {menu}
     </HeaderMenu>
   ));
+  const smallMenus = menuList.map((menu, idx) => {
+    if (idx > 1) return;
+    return (
+      <HeaderMenu key={idx} setNavShown={setNavShown} MainNavRef={MainNavRef}>
+        {menu}
+      </HeaderMenu>
+    );
+  });
   return (
     <NavigationBlock>
-      <div className='navi-tab'>{menus}</div>
-      {isNavShown && <MainNavigation MainNavRef={MainNavRef} setNavShown={setNavShown} />}
+      <MediaBasicScreen>
+        <div className='navi-tab'>{menus}</div>
+      </MediaBasicScreen>
+      <MediaSmallScreen>
+        <div className='navi-tab'>{smallMenus}</div>
+      </MediaSmallScreen>
+
+      <MediaBasicScreen>
+        {isNavShown && <MainNavigation MainNavRef={MainNavRef} setNavShown={setNavShown} />}
+      </MediaBasicScreen>
     </NavigationBlock>
   );
 }
