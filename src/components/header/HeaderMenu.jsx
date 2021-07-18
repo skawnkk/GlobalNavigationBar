@@ -5,14 +5,13 @@ function Menu({ setNavShown, MainNavRef, children }) {
     if (children !== '탐색') return;
     setNavShown(true);
   };
-  const handleMouseLeave = (e) => {
-    const keepStateBlock = e.relatedTarget;
-    if (keepStateBlock === MainNavRef.current) return;
-    setNavShown(false);
+  const handleMouseLeave = ({ relatedTarget }) => {
+    if (relatedTarget === MainNavRef.current) return;
+    if (relatedTarget.closest('.header')) setNavShown(false);
   };
 
   return (
-    <MenuBlock onMouseEnter={() => handleMouseMove(children)} onMouseLeave={handleMouseLeave}>
+    <MenuBlock className='header' onMouseEnter={() => handleMouseMove(children)} onMouseOut={handleMouseLeave}>
       {children}
     </MenuBlock>
   );
