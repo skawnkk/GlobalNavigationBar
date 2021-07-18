@@ -4,7 +4,7 @@ import Navigation from './NavigationBar';
 import Options from './Options';
 function Header() {
   return (
-    <HeaderBlock>
+    <HeaderBlock className='header'>
       <Logo />
       <Navigation />
       <Options />

@@ -14,7 +14,7 @@ function Navigation() {
   return (
     <NavigationBlock>
       <div className='navi-tab'>{menus}</div>
-      {isNavShown && <MainNavigation MainNavRef={MainNavRef} isNavShown={isNavShown} setNavShown={setNavShown} />}
+      {isNavShown && <MainNavigation MainNavRef={MainNavRef} setNavShown={setNavShown} />}
     </NavigationBlock>
   );
 }
