@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Logo from './Logo';
+import Logo from '../common/Logo';
 import Navigation from './NavigationBar';
 import Options from './Options';
 function Header() {
