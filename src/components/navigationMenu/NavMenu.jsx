@@ -1,34 +1,34 @@
 import styled from 'styled-components';
-import NaviMenuTitle from './NaviMenuTitle';
-function NaviMenu({ title, contents }) {
+import NavMenuTitle from './NavMenuTitle';
+function NavMenu({ title, contents }) {
   const subMenus = contents.map((content, idx) => (idx <= 6 ? <div key={idx}>{content.title}</div> : null));
 
   return (
-    <NaviMenuBlock>
-      <NaviMenuTitle>
+    <NavMenuBlock>
+      <NavMenuTitle>
         <div>{title}</div>
         <div className='icon'>&gt;</div>
-      </NaviMenuTitle>
-      <div className='navi-subMenu'>
+      </NavMenuTitle>
+      <div className='nav-subMenu'>
         {subMenus}
-        <div className='navi-subMenu-more'>
+        <div className='nav-subMenu-more'>
           <div>더보기</div>
           <div className='icon'>&gt;</div>
         </div>
       </div>
-    </NaviMenuBlock>
+    </NavMenuBlock>
   );
 }
-export default NaviMenu;
-const NaviMenuBlock = styled.div`
+export default NavMenu;
+const NavMenuBlock = styled.div`
   width: 180px;
-  .navi-subMenu {
+  .nav-subMenu {
     line-height: 2;
     div {
       cursor: pointer;
     }
   }
-  .navi-subMenu-more {
+  .nav-subMenu-more {
     display: flex;
     justify-content: space-between;
     align-content: center;

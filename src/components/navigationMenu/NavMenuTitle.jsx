@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-function NaviMenuTitle({ children }) {
+function NavMenuTitle({ children }) {
   return <Title>{children}</Title>;
 }
 
-export default NaviMenuTitle;
+export default NavMenuTitle;
 const Title = styled.div`
   display: flex;
   justify-content: space-between;
