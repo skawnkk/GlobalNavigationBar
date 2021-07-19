@@ -23,10 +23,10 @@ function Navigation() {
   return (
     <NavigationBlock>
       <MediaBasicScreen>
-        <div className='navi-tab'>{menus}</div>
+        <div className='nav-tab'>{menus}</div>
       </MediaBasicScreen>
       <MediaSmallScreen>
-        <div className='navi-tab'>{smallMenus}</div>
+        <div className='nav-tab'>{smallMenus}</div>
       </MediaSmallScreen>
 
       <MediaBasicScreen>
@@ -37,7 +37,7 @@ function Navigation() {
 }
 
 const NavigationBlock = styled.div`
-  .navi-tab {
+  .nav-tab {
     display: flex;
     justify-content: center;
   }

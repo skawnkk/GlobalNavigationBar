@@ -18,7 +18,7 @@ const HeaderBlock = styled.div`
   @media only screen and (max-width: 900px) {
     padding: 0 5%;
   }
-  padding: 0 15%;
+  padding: 0 10%;
   border-bottom: 1px solid ${({ theme }) => theme.color.grey};
 `;
 export default Header;
