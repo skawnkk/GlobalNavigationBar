@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 import NavMenuTitle from './NavMenuTitle';
+import checkLength from '../../util/checkLength';
 function NavMenu({ title, contents }) {
-  const subMenus = contents.map((content, idx) => (idx <= 6 ? <div key={idx}>{content.title}</div> : null));
+  const subMenus = contents.map((content, idx) =>
+    idx <= 6 ? <div key={idx}>{checkLength(content.title)}</div> : null
+  );
 
   return (
     <NavMenuBlock>
@@ -21,7 +24,8 @@ function NavMenu({ title, contents }) {
 }
 export default NavMenu;
 const NavMenuBlock = styled.div`
-  width: 180px;
+  width: 150px;
+  padding-right: 20px;
   .nav-subMenu {
     line-height: 2;
     div {
